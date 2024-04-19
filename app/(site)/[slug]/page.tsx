@@ -9,12 +9,16 @@ export default async function Page({ params }: Props) {
   const page = await getPage(params.slug);
 
   return (
-    <div>
-      <h1 className="text-5xl">{page.title}</h1>
+    <>
+      {page && (
+        <div>
+          <h1 className="text-5xl">{page.title}</h1>
 
-      <div>
-        <PortableText value={page.content} />
-      </div>
-    </div>
+          <div>
+            <PortableText value={page.content} />
+          </div>
+        </div>
+      )}
+    </>
   );
 }

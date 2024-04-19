@@ -7,6 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      IbarraRealNova: ["IbarraRealNova", "serif"],
+      NotoSans: ["NotoSans", "sans-serif"],
+    },
+    colors: {
+      transparent: "transparent",
+      "white": "#ffffff",
+      "black": "#00040d",
+      "neutral": "#ccccdcf",
+      "light": "#e6e6e7",
+      
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
