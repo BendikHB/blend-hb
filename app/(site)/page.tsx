@@ -1,3 +1,4 @@
+import BackgroundVideoEmbed from "@/components/BackgroundVideoEmbed";
 import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,27 +7,20 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <div className="max-w-5xl mx-auto py-20">
-      <h1 className="text-7xl font-extrabold">This is header one</h1>
-      <h2 className="mt-24 font-bold text-grey-700 text-3xl">Projects</h2>
-      <div className="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
+    <div className="mx-auto">
+      <div className="p-2 grid grid-cols-5 grid-rows-2 gap-2 w-screen max-h-dvh overflow-hidden">
+        <div className="col-start-1 col-end-4 row-span-2 w-full relative overflow-hidden pt-[100%]">
+          <BackgroundVideoEmbed embed="https://player.vimeo.com/video/938212565" />
+        </div>
+        <div className="col-start-4 col-end-6 row-span-1 w-full bg-light"></div>
+        <div className="col-start-4 col-end-6 row-span-1 w-full bg-dark flex justify-center items-center">
           <Link
-            href={`/projects/${project.slug}`}
-            key={project._id}
-            className="border border-gray-500 rounded-lg"
+            href={"/about"}
+            className="font-IbarraRealNova text-light text-5xl text-center w-full"
           >
-            {project.image && (
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={250}
-                height={100}
-              />
-            )}
-            <div>{project.name}</div>
+            About
           </Link>
-        ))}
+        </div>
       </div>
     </div>
   );

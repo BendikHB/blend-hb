@@ -14,9 +14,11 @@ const config: Config = {
     colors: {
       transparent: "transparent",
       "white": "#ffffff",
-      "black": "#00040d",
-      "neutral": "#ccccdcf",
-      "light": "#e6e6e7",
+      "black": "#191D1B",
+      "dark": "#242F2B",
+      "light": "#F7F7F2",
+      "green": "#899878",
+      "sand": "#EAEBDC",
       
     },
     extend: {

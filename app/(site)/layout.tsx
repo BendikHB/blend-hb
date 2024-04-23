@@ -21,8 +21,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="flex items-center justify-between py-6 container mx-auto text-xl">
-          <Link href={"/"}>Home</Link>
+        <header className="flex items-center justify-between p-6 text-xl fixed z-50 bg-white w-screen">
+          <Link href={"/"}>BlendHB</Link>
           <div className="flex items-center gap-8">
             {pages.map((page) => (
               <Link key={page._id} href={`/${page.slug}`}>
