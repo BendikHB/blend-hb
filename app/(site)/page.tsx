@@ -8,19 +8,19 @@ export default async function Home() {
 
   return (
     <div className="mx-auto">
-      <div className="p-2 grid grid-cols-5 grid-rows-2 gap-2 w-screen max-h-dvh overflow-hidden">
+      <div className="p-2 grid grid-cols-6 grid-rows-2 gap-2 w-screen max-h-dvh overflow-hidden">
         <div className="col-start-1 col-end-4 row-span-2 w-full relative overflow-hidden pt-[100%]">
           <BackgroundVideoEmbed embed="https://player.vimeo.com/video/938212565" />
         </div>
-        <div className="col-start-4 col-end-6 row-span-1 w-full bg-light"></div>
-        <div className="col-start-4 col-end-6 row-span-1 w-full bg-dark flex justify-center items-center">
-          <Link
-            href={"/about"}
-            className="font-IbarraRealNova text-light text-5xl text-center w-full"
-          >
+        <div className="col-start-4 col-end-7 row-span-1 w-full bg-light"></div>
+        <Link
+          href={"/about"}
+          className="col-start-4 col-end-7 row-span-1 w-full bg-dark flex justify-center items-center"
+        >
+          <div className="font-IbarraRealNova text-light text-7xl text-center w-full">
             About
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
