@@ -2,6 +2,7 @@ import { Project } from "@/types/Projects";
 import { createClient, groq } from "next-sanity";
 import  clientConfig  from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Wines } from "@/types/Wines";
 
 export async function getProjects(): Promise<Project[]> {
   return createClient(clientConfig).fetch(
@@ -55,4 +56,33 @@ export async function getPage(slug: string): Promise<Page> {
     }`,
     { slug }
   )
+}
+
+export async function getWines(): Promise<Wines[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "wine"]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+            url,
+            content
+        }`,
+  );
+}
+
+export async function getWine(slug: string): Promise<Wines> {    
+      return createClient(clientConfig).fetch(
+        groq`*[_type == "wine" && slug.current == $slug][0]{
+                _id,
+                _createdAt,
+                name,
+                "slug": slug.current,
+                "image": image.asset->url,
+                url,
+                content
+            }`,
+            { slug }
+      );
 }
